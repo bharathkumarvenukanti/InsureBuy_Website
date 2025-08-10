@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsureBuy - Register</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-700 rounded-lg p-2 hover:bg-blue-50 transition duration-300">InsureBuy</a>
+            <nav>
+                <ul class="flex space-x-6 items-center">
+                    <li>
+                        <a href="login.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Login</a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Register</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center py-16">
+        <div class="container mx-auto max-w-md card p-8">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Create an Account</h2>
+
+            <div id="authMessage" class="hidden"></div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label for="regUsername" class="block text-sm font-medium text-gray-700">User Name</label>
+                    <input type="text" id="regUsername" class="input-field mt-1" placeholder="e.g., John Doe">
+                    <span id="regUsernameError" class="error-message hidden"></span>
+                </div>
+                <div>
+                    <label for="regEmail" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="regEmail" class="input-field mt-1" placeholder="e.g., john.doe@example.com">
+                    <span id="regEmailError" class="error-message hidden"></span>
+                </div>
+                <div>
+                    <label for="regPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="regPassword" class="input-field mt-1" placeholder="8-16 characters, uppercase, number, symbol">
+                    <span id="passwordStrength" class="text-xs mt-1 text-gray-500"></span>
+                    <span id="regPasswordError" class="error-message hidden"></span>
+                </div>
+                <div>
+                    <label for="regConfirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" class="input-field mt-1" placeholder="Re-enter your password">
+                    <span id="regConfirmPasswordError" class="error-message hidden"></span>
+                </div>
+                <button id="registerBtn" class="w-full btn-primary">Register</button>
+            </div>
+
+            <p class="mt-6 text-center text-sm">
+                Already have an account? <a href="login.html" class="text-blue-600 hover:underline font-medium">Login now</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-auto rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <div class="border-t border-gray-700 pt-6 text-gray-500 text-sm">
+                <p>&copy; 2025 InsureBuy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/register.js"></script>
+</body>
+</html>
