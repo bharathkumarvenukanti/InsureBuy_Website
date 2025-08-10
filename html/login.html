@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsureBuy - Login</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-700 rounded-lg p-2 hover:bg-blue-50 transition duration-300">InsureBuy</a>
+            <nav>
+                <ul class="flex space-x-6 items-center">
+                    <li>
+                        <a href="login.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Login</a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Register</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center py-16">
+        <div class="container mx-auto max-w-md card p-8">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Login to Your Account</h2>
+            
+            <div id="authMessage" class="hidden"></div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label for="loginUsernameEmail" class="block text-sm font-medium text-gray-700">Username or Email</label>
+                    <input type="text" id="loginUsernameEmail" class="input-field mt-1" placeholder="Username or Email">
+                    <span id="loginUsernameEmailError" class="error-message hidden"></span>
+                </div>
+                <div>
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="loginPassword" class="input-field mt-1" placeholder="Password">
+                    <span id="loginPasswordError" class="error-message hidden"></span>
+                </div>
+                <a href="#" id="forgotPasswordLink" class="text-sm text-blue-600 hover:underline block text-right">Forgot Password?</a>
+                <button id="loginBtn" class="w-full btn-primary mt-4">Login</button>
+            </div>
+            
+            <p class="mt-6 text-center text-sm">
+                Don't have an account? <a href="register.html" class="text-blue-600 hover:underline font-medium">Register now</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-auto rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <div class="border-t border-gray-700 pt-6 text-gray-500 text-sm">
+                <p>&copy; 2025 InsureBuy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/login.js"></script>
+</body>
+</html>
