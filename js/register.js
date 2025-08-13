@@ -23,7 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Dummy registration logic
                 localStorage.setItem('authToken', 'dummy_token');
                 localStorage.setItem('username', username);
-                window.location.href = 'dashboard.html';
+                
+                // Set the success message in localStorage before redirecting
+                localStorage.setItem('registrationSuccessMessage', 'Successfully created your account. Please log in now.');
+
+                // Redirect to the login page
+                window.location.href = 'login.html';
             } else {
                 authMessage.textContent = 'Please fill out all required fields.';
                 authMessage.classList.remove('hidden');
