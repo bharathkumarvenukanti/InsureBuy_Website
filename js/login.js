@@ -7,6 +7,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = getEl('loginBtn');
     const loginUsernameEmail = getEl('loginUsernameEmail');
     const authMessage = getEl('authMessage');
+    const successMessageDiv = getEl('successMessage');
+
+    // Check for registration success message in localStorage
+    const registrationSuccess = localStorage.getItem('registrationSuccessMessage');
+    if (registrationSuccess) {
+        if (successMessageDiv) {
+            successMessageDiv.textContent = registrationSuccess;
+            successMessageDiv.classList.remove('hidden');
+            successMessageDiv.className = 'mt-6 p-3 rounded-lg text-sm bg-green-100 text-green-800 border border-green-300';
+            // Clear the message so it doesn't show again
+            localStorage.removeItem('registrationSuccessMessage');
+        }
+    }
 
     // Handle login button click
     if (loginBtn) {
