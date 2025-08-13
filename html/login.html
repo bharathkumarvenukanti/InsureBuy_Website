@@ -56,6 +56,7 @@
             </div>
             
             <!-- This is the new message display area -->
+            <div id="authMessage" class="hidden"></div>
             <div id="successMessage" class="hidden"></div>
             
             <form class="space-y-6">
@@ -80,11 +81,11 @@
                     </div>
     
                     <div class="text-sm">
-                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500 transition duration-200">Forgot your password?</a>
+                        <a href="#" id="forgotPasswordLink" class="font-medium text-blue-600 hover:text-blue-500 transition duration-200">Forgot your password?</a>
                     </div>
                 </div>
                 <div>
-                    <button id="loginBtn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-200">
+                    <button id="loginBtn" type="button" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-200">
                         Login
                     </button>
                 </div>
