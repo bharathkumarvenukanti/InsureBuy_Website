@@ -6,6 +6,8 @@
     <title>InsureBuy - Login</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Google Font: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -28,44 +30,80 @@
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen">
-    <div class="w-full max-w-md p-8 bg-white rounded-2xl shadow-xl transform transition-all duration-300 hover:scale-105">
-        <div class="text-center mb-8">
-            <h1 class="text-4xl font-extrabold text-gray-900">InsureBuy</h1>
-            <p class="mt-2 text-lg text-gray-500">Secure your future in minutes.</p>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="../index.html" class="text-3xl font-bold text-blue-700 rounded-lg p-2 hover:bg-blue-50 transition duration-300">InsureBuy</a>
+            <nav>
+                <ul class="flex space-x-6 items-center">
+                    <li>
+                        <a href="login.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Login</a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Register</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <form class="space-y-6">
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
-                <div class="mt-1">
-                    <input id="email" name="email" type="email" autocomplete="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
-                </div>
-            </div>
+    </header>
 
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <div class="mt-1">
-                    <input id="password" name="password" type="password" autocomplete="current-password" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
-                </div>
+    <main class="flex-grow flex items-center justify-center py-16">
+        <div class="w-full max-w-md p-8 bg-white rounded-2xl shadow-xl transform transition-all duration-300 hover:scale-105">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-extrabold text-gray-900">Login to Your Account</h2>
+                <p class="mt-2 text-lg text-gray-500">Secure your future in minutes.</p>
             </div>
-
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                    <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>
+            
+            <!-- This is the new message display area -->
+            <div id="successMessage" class="hidden"></div>
+            
+            <form class="space-y-6">
+                <div>
+                    <label for="loginUsernameEmail" class="block text-sm font-medium text-gray-700">Username or Email</label>
+                    <div class="mt-1">
+                        <input type="text" id="loginUsernameEmail" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200" placeholder="Username or Email">
+                        <span id="loginUsernameEmailError" class="error-message hidden"></span>
+                    </div>
                 </div>
-
-                <div class="text-sm">
-                    <a href="#" class="font-medium text-blue-600 hover:text-blue-500 transition duration-200">Forgot your password?</a>
+                <div>
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                    <div class="mt-1">
+                        <input type="password" id="loginPassword" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200" placeholder="Password">
+                        <span id="loginPasswordError" class="error-message hidden"></span>
+                    </div>
                 </div>
-            </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>
+                    </div>
+    
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500 transition duration-200">Forgot your password?</a>
+                    </div>
+                </div>
+                <div>
+                    <button id="loginBtn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-200">
+                        Login
+                    </button>
+                </div>
+            </form>
+            
+            <p class="mt-6 text-center text-sm">
+                Don't have an account? <a href="register.html" class="text-blue-600 hover:underline font-medium">Register now</a>
+            </p>
+        </div>
+    </main>
 
-            <div>
-                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-200">
-                    Sign In
-                </button>
+    <footer class="bg-gray-800 text-white py-8 mt-auto rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <div class="border-t border-gray-700 pt-6 text-gray-500 text-sm">
+                <p>&copy; 2025 InsureBuy. All rights reserved.</p>
             </div>
-        </form>
-    </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/login.js"></script>
 </body>
 </html>
