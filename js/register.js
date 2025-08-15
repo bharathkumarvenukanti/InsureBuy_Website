@@ -20,11 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Basic form validation (for demonstration)
             if (username && email && password) {
-                // Dummy registration logic
-                localStorage.setItem('authToken', 'dummy_token');
-                localStorage.setItem('username', username);
+                // Save all user credentials to localStorage
+                localStorage.setItem('registeredUsername', username);
+                localStorage.setItem('registeredEmail', email);
+                localStorage.setItem('registeredPassword', password);
                 
-                // Set the success message in localStorage before redirecting
+                // Set a success message in localStorage before redirecting
                 localStorage.setItem('registrationSuccessMessage', 'Successfully created your account. Please log in now.');
 
                 // Redirect to the login page
