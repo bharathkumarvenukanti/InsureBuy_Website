@@ -30,10 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const usernameEmail = loginUsernameEmail.value.trim();
             const password = loginPassword.value.trim();
             
-            // Dummy login logic
-            if (usernameEmail === 'testuser' && password === 'password') {
+            // Correctly retrieve and validate against stored credentials
+            const storedUsername = localStorage.getItem('registeredUsername');
+            const storedEmail = localStorage.getItem('registeredEmail');
+            const storedPassword = localStorage.getItem('registeredPassword');
+
+            if (
+                (usernameEmail === storedUsername || usernameEmail === storedEmail) &&
+                password === storedPassword
+            ) {
+                // Set the current user session
                 localStorage.setItem('authToken', 'dummy_token');
-                localStorage.setItem('username', usernameEmail);
+                localStorage.setItem('username', storedUsername);
                 window.location.href = 'dashboard.html';
             } else {
                 if (authMessage) {
@@ -49,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (forgotPasswordLink) {
         forgotPasswordLink.addEventListener('click', (e) => {
             e.preventDefault();
-            // This is a dummy implementation. In a real app, you would redirect to a password reset page or open a modal.
             if (authMessage) {
                 authMessage.textContent = 'A password reset link has been sent to your email. (This is a dummy message)';
                 authMessage.classList.remove('hidden');
