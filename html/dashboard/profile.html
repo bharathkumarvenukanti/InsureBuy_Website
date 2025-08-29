@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsureBuy - Profile</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-[Inter]">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-10 sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="../../index.html" class="text-2xl font-bold text-blue-700">InsureBuy</a>
+
+            <!-- Navigation (Desktop) -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="../dashboard.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Dashboard</a>
+                <a href="mypolicies.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">My Policies</a>
+                <a href="fileaclaim.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">File a Claim</a>
+                <a href="profile.html" class="text-blue-600 font-medium transition-colors">Profile</a>
+                <a href="support.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Support</a>
+            </nav>
+
+            <!-- User Info & Logout (Desktop) -->
+            <div class="hidden md:flex items-center space-x-4">
+                <span id="loggedInUserName" class="font-medium text-gray-700"></span>
+                <button id="logoutButton" class="btn-secondary">Logout</button>
+            </div>
+
+            <!-- Mobile Menu Button (Placeholder for functionality) -->
+            <button class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow py-10 px-6 md:px-10">
+        <div class="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <div class="flex-shrink-0">
+                    <img src="https://placehold.co/150x150/E0E0E0/000000?text=Profile" alt="User Profile" class="rounded-full w-32 h-32 md:w-40 md:h-40">
+                </div>
+                <div class="flex-grow text-center md:text-left">
+                    <h1 class="text-3xl font-bold text-gray-800" id="profileName">Alex M. Chen</h1>
+                    <p class="text-gray-600" id="profileDetails">Creative Designer & Photographer</p>
+                    <div class="mt-4 flex flex-col sm:flex-row items-center sm:items-start sm:space-x-4 space-y-4 sm:space-y-0">
+                        <button class="btn-primary w-full sm:w-auto">Edit Profile</button>
+                        <button class="btn-secondary w-full sm:w-auto">Change Password</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 border-t pt-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Account Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Email Address</p>
+                        <p class="text-gray-800" id="profileEmail">alex.chen@example.com</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Member Since</p>
+                        <p class="text-gray-800" id="profileMemberSince">August 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-10 mt-auto">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-sm text-gray-400">&copy; 2025 InsureBuy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script type="module" src="../../js/dashboard/profile.js"></script>
+</body>
+</html>
