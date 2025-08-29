@@ -7,25 +7,25 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Google Font: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-[Inter]">
 
     <!-- Header Section -->
     <header class="bg-white shadow-sm py-4 px-6 md:px-10 sticky top-0 z-10">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- Logo -->
-            <a href="index.html" class="text-2xl font-bold text-gray-800">InsureBuy</a>
+            <a href="../index.html" class="text-2xl font-bold text-blue-700">InsureBuy</a>
 
             <!-- Navigation (Desktop) -->
             <nav class="hidden md:flex space-x-8">
-                <a href="dashboard.html" class="text-blue-600 font-medium transition-colors nav-link">Dashboard</a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors nav-link">My Policies</a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors nav-link">File a Claim</a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors nav-link">Profile</a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 font-medium transition-colors nav-link">Support</a>
+                <a href="dashboard.html" class="text-blue-600 font-medium transition-colors">Dashboard</a>
+                <a href="#" id="policiesLink" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">My Policies</a>
+                <a href="#" id="claimsLink" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">File a Claim</a>
+                <a href="#" id="profileLink" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Profile</a>
+                <a href="#" id="supportLink" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Support</a>
             </nav>
 
             <!-- User Info & Logout (Desktop) -->
@@ -44,31 +44,33 @@
     </header>
 
     <!-- Dashboard Content -->
-    <main class="flex-grow py-10 px-6 md:px-10 bg-gray-50">
+    <main class="flex-grow py-10 px-6 md:px-10">
         <div class="max-w-7xl mx-auto">
-            <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome, <span id="dashboardUserName">User</span>!</h1>
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome, <span id="dashboardUserName" class="text-blue-600">User</span>!</h1>
 
             <!-- Quick Actions Section -->
-            <section class="mb-8">
+            <section class="mb-8 p-6 bg-white rounded-xl shadow-lg">
                 <h2 class="text-2xl font-semibold text-gray-700 mb-4">Quick Actions</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <button class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                    <button id="getQuoteBtn" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
                         <span class="text-4xl mb-2">✍️</span> Get a New Quote
                     </button>
-                    <button class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                    <button id="fileClaimBtn" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
                         <span class="text-4xl mb-2">📄</span> File a Claim
                     </button>
-                    <button class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                    <button id="makePaymentBtn" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
                         <span class="text-4xl mb-2">💳</span> Make a Payment
                     </button>
                 </div>
             </section>
 
             <!-- Active Policies Section -->
-            <section class="mb-8">
-                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Your Active Policies</h2>
+            <section class="mb-8 p-6 bg-white rounded-xl shadow-lg">
+                <a href="#" id="policiesTitleLink" class="block">
+                    <h2 class="text-2xl font-semibold text-gray-700 mb-4 hover:underline">Your Active Policies</h2>
+                </a>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Policy Card 1 -->
+                    <!-- Policy Card 1 (Hardcoded for now) -->
                     <div class="card p-6 flex items-center space-x-4">
                         <div class="text-5xl">🚗</div>
                         <div>
@@ -77,7 +79,7 @@
                             <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Details & Documents</a>
                         </div>
                     </div>
-                    <!-- Policy Card 2 -->
+                    <!-- Policy Card 2 (Hardcoded for now) -->
                     <div class="card p-6 flex items-center space-x-4">
                         <div class="text-5xl">🏥</div>
                         <div>
@@ -86,20 +88,11 @@
                             <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Details & Documents</a>
                         </div>
                     </div>
-                    <!-- Policy Card 3 (Example) -->
-                    <div class="card p-6 flex items-center space-x-4">
-                        <div class="text-5xl">🏠</div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800">Home Insurance</h3>
-                            <p class="text-gray-600">Policy #: GHI11223 | Expires: 09/15/2025</p>
-                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Details & Documents</a>
-                        </div>
-                    </div>
                 </div>
             </section>
 
             <!-- Notifications Section -->
-            <section>
+            <section class="mb-8 p-6 bg-white rounded-xl shadow-lg">
                 <h2 class="text-2xl font-semibold text-gray-700 mb-4">Notifications</h2>
                 <div class="card p-6">
                     <ul class="space-y-3">
@@ -137,6 +130,6 @@
     </footer>
 
     <!-- Custom JavaScript -->
-    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="../js/dashboard.js"></script>
 </body>
 </html>
