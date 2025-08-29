@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- Google Font: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            animation: gradient-animation 15s ease infinite;
+            background: linear-gradient(-45deg, #1d4ed8, #5b21b6, #be185d, #ec4899);
+            background-size: 400% 400%;
+        }
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+
 </head>
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
