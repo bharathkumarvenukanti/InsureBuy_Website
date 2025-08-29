@@ -22,10 +22,10 @@
             <!-- Navigation (Desktop) -->
             <nav class="hidden md:flex space-x-8">
                 <a href="dashboard.html" class="text-blue-600 font-medium transition-colors">Dashboard</a>
-                <a href="#" id="policiesLink" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">My Policies</a>
-                <a href="#" id="claimsLink" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">File a Claim</a>
-                <a href="#" id="profileLink" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Profile</a>
-                <a href="#" id="supportLink" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Support</a>
+                <a href="mypolicies.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">My Policies</a>
+                <a href="fileaclaim.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">File a Claim</a>
+                <a href="profile.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Profile</a>
+                <a href="support.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Support</a>
             </nav>
 
             <!-- User Info & Logout (Desktop) -->
@@ -52,21 +52,21 @@
             <section class="mb-8 p-6 bg-white rounded-xl shadow-lg">
                 <h2 class="text-2xl font-semibold text-gray-700 mb-4">Quick Actions</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <button id="getQuoteBtn" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                    <a href="mypolicies.html" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
                         <span class="text-4xl mb-2">✍️</span> Get a New Quote
-                    </button>
-                    <button id="fileClaimBtn" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                    </a>
+                    <a href="fileaclaim.html" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
                         <span class="text-4xl mb-2">📄</span> File a Claim
-                    </button>
-                    <button id="makePaymentBtn" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                    </a>
+                    <a href="mypolicies.html" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
                         <span class="text-4xl mb-2">💳</span> Make a Payment
-                    </button>
+                    </a>
                 </div>
             </section>
 
             <!-- Active Policies Section -->
             <section class="mb-8 p-6 bg-white rounded-xl shadow-lg">
-                <a href="#" id="policiesTitleLink" class="block">
+                <a href="mypolicies.html" class="block">
                     <h2 class="text-2xl font-semibold text-gray-700 mb-4 hover:underline">Your Active Policies</h2>
                 </a>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -76,7 +76,7 @@
                         <div>
                             <h3 class="text-xl font-semibold text-gray-800">Auto Insurance</h3>
                             <p class="text-gray-600">Policy #: ABC12345 | Expires: 12/31/2025</p>
-                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Details & Documents</a>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium policy-detail-link">View Details & Documents</a>
                         </div>
                     </div>
                     <!-- Policy Card 2 (Hardcoded for now) -->
@@ -85,7 +85,7 @@
                         <div>
                             <h3 class="text-xl font-semibold text-gray-800">Health Insurance</h3>
                             <p class="text-gray-600">Policy #: DEF67890 | Expires: 06/30/2026</p>
-                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Details & Documents</a>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium policy-detail-link">View Details & Documents</a>
                         </div>
                     </div>
                 </div>
