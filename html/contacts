@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsureBuy - Contact Us</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-[Inter]">
+
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="../index.html" class="text-3xl font-bold text-blue-700 rounded-lg p-2 hover:bg-blue-50 transition duration-300">InsureBuy</a>
+
+            <nav>
+                <ul class="flex space-x-6 items-center">
+                    <li><a href="../index.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Home</a></li>
+                    <li><a href="plans.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Plans</a></li>
+                    <li><a href="../index.html#ai-assistant" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">AI Assistant</a></li>
+                    <li><a href="../index.html#why-choose-us" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Why Choose Us?</a></li>
+                    <li><a href="../index.html#about" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">About Us</a></li>
+                    <li><a href="contacts.html" class="text-lg font-medium text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Contact</a></li>
+                    <li>
+                        <a href="login.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Login</a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Register</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="py-16 bg-white rounded-lg mx-4 mt-8 shadow-md">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Ready to Get Started?</h2>
+                <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                    Get a personalized quote in minutes. Experience the simplicity of InsureBuy today!
+                </p>
+                <a href="#" class="bg-blue-600 text-white font-bold py-4 px-10 rounded-full shadow-lg text-xl hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                    Get Your Free Quote Now
+                </a>
+
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Contact Us Directly</h3>
+                    <p class="text-lg text-gray-700">For direct assistance, please contact:</p>
+                    <p class="text-xl font-semibold text-blue-700 mt-2">Bharath Kumar</p>
+                    <p class="text-xl font-semibold text-blue-700">+37122722222</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <div class="border-t border-gray-700 pt-6 text-gray-500 text-sm">
+                <p>&copy; 2025 InsureBuy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/contacts.js"></script>
+</body>
+</html>
