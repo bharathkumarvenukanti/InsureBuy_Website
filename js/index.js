@@ -1,6 +1,6 @@
 // index.js
 
-// Firebase Imports
+// Firebase Imports (Keep these at the top of your JS file if you need them)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -122,14 +122,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Smooth scrolling for internal links
-    navLinks.forEach(link => {
+    getEls('a.nav-link[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            if (targetId) {
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
-
 });
