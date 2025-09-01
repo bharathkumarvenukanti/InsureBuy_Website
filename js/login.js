@@ -14,13 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check for registration success message in localStorage
     const registrationSuccess = localStorage.getItem('registrationSuccessMessage');
     if (registrationSuccess) {
-        if (successMessageDiv) {
-            successMessageDiv.textContent = registrationSuccess;
-            successMessageDiv.classList.remove('hidden');
-            successMessageDiv.className = 'mt-6 p-3 rounded-lg text-sm bg-green-100 text-green-800 border border-green-300';
+        if (authMessage) {
+            authMessage.textContent = registrationSuccess;
+            authMessage.classList.remove('hidden');
+            authMessage.className = 'mt-6 p-3 rounded-lg text-sm bg-green-100 text-green-800 border border-green-300';
             // Clear the message so it doesn't show again
             localStorage.removeItem('registrationSuccessMessage');
         }
+    }
+
+    // Helper function to get the base URL
+    function getBaseUrl() {
+        const path = window.location.pathname;
+        const lastSlashIndex = path.lastIndexOf('/');
+        return window.location.origin + path.substring(0, lastSlashIndex + 1);
     }
 
     // Handle login button click
