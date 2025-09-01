@@ -264,112 +264,139 @@
 </html>
 ```
 ```html
-<!-- login.html -->
+<!-- dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InsureBuy - Login</title>
+    <title>InsureBuy - My Dashboard</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Google Font: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            animation: gradient-animation 15s ease infinite;
-            background: linear-gradient(-45deg, #1d4ed8, #5b21b6, #be185d, #ec4899);
-            background-size: 400% 400%;
-        }
-        @keyframes gradient-animation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-    </style>
-
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+<body class="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-[Inter]">
 
-    <header class="bg-white shadow-sm py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="../index.html" class="text-3xl font-bold text-blue-700 rounded-lg p-2 hover:bg-blue-50 transition duration-300">InsureBuy</a>
-            <nav>
-                <ul class="flex space-x-6 items-center">
-                    <li>
-                        <a href="login.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Login</a>
-                    </li>
-                    <li>
-                        <a href="register.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Register</a>
-                    </li>
-                </ul>
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-10 sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="../../index.html" class="text-2xl font-bold text-blue-700">InsureBuy</a>
+
+            <!-- Navigation (Desktop) -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="../dashboard.html" class="text-blue-600 font-medium transition-colors">Dashboard</a>
+                <a href="mypolicies.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">My Policies</a>
+                <a href="fileaclaim.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">File a Claim</a>
+                <a href="profile.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Profile</a>
+                <a href="support.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Support</a>
             </nav>
+
+            <!-- User Info & Logout (Desktop) -->
+            <div class="hidden md:flex items-center space-x-4">
+                <span id="loggedInUserName" class="font-medium text-gray-700"></span>
+                <button id="logoutButton" class="btn-secondary">Logout</button>
+            </div>
+
+            <!-- Mobile Menu Button (Placeholder for functionality) -->
+            <button class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
     </header>
 
-    <main class="flex-grow flex items-center justify-center py-16">
-        <div class="w-full max-w-md p-8 bg-white rounded-2xl shadow-xl transform transition-all duration-300 hover:scale-105">
-            <div class="text-center mb-8">
-                <h2 class="text-4xl font-extrabold text-gray-900">Sign in to your account</h2>
-                <p class="mt-2 text-lg text-gray-500">Welcome back! Please enter your details.</p>
-            </div>
-            
-            <div id="authMessage" class="hidden"></div>
-            
-            <form class="space-y-6">
-                <div>
-                    <label for="loginUsernameEmail" class="block text-sm font-medium text-gray-700">Username or Email</label>
-                    <div class="mt-1">
-                        <input type="text" id="loginUsernameEmail" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200" placeholder="Username or Email">
-                        <span id="loginUsernameEmailError" class="error-message hidden"></span>
-                    </div>
-                </div>
-                <div>
-                    <label for="loginPassword" class="block text-sm font-medium text-gray-700">Password</label>
-                    <div class="mt-1">
-                        <input type="password" id="loginPassword" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200" placeholder="Password">
-                        <span id="loginPasswordError" class="error-message hidden"></span>
-                    </div>
-                </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>
-                    </div>
-                    <div class="text-sm">
-                        <a href="#" id="forgotPasswordLink" class="font-medium text-blue-600 hover:text-blue-500">Forgot your password?</a>
-                    </div>
-                </div>
-                <div>
-                    <button id="loginBtn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-200">
-                        Sign In
-                    </button>
-                </div>
-            </form>
+    <!-- Dashboard Content -->
+    <main class="flex-grow py-10 px-6 md:px-10">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome, <span id="dashboardUserName" class="text-blue-600">User</span>!</h1>
 
-            <p class="mt-6 text-center text-sm">
-                Don't have an account? <a href="register.html" class="text-blue-600 hover:underline font-medium">Register now</a>
-            </p>
+            <!-- Quick Actions Section -->
+            <section class="mb-8 p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Quick Actions</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="dashboard/mypolicies.html" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                        <span class="text-4xl mb-2">✍️</span> Get a New Quote
+                    </a>
+                    <a href="dashboard/fileaclaim.html" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                        <span class="text-4xl mb-2">📄</span> File a Claim
+                    </a>
+                    <a href="dashboard/mypolicies.html" class="card p-6 text-center btn-primary flex flex-col items-center justify-center h-32">
+                        <span class="text-4xl mb-2">💳</span> Make a Payment
+                    </a>
+                </div>
+            </section>
+
+            <!-- Active Policies Section -->
+            <section class="mb-8 p-6 bg-white rounded-xl shadow-lg">
+                <a href="dashboard/mypolicies.html" class="block">
+                    <h2 class="text-2xl font-semibold text-gray-700 mb-4 hover:underline">Your Active Policies</h2>
+                </a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Policy Card 1 (Hardcoded for now) -->
+                    <div class="card p-6 flex items-center space-x-4">
+                        <div class="text-5xl">🚗</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Auto Insurance</h3>
+                            <p class="text-gray-600">Policy #: ABC12345 | Expires: 12/31/2025</p>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium policy-detail-link">View Details & Documents</a>
+                        </div>
+                    </div>
+                    <!-- Policy Card 2 (Hardcoded for now) -->
+                    <div class="card p-6 flex items-center space-x-4">
+                        <div class="text-5xl">🏥</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Health Insurance</h3>
+                            <p class="text-gray-600">Policy #: DEF67890 | Expires: 06/30/2026</p>
+                            <a href="#" class="text-blue-600 hover:underline text-sm font-medium policy-detail-link">View Details & Documents</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notifications Section -->
+            <section class="mb-8 p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Notifications</h2>
+                <div class="card p-6">
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">🔔</span>
+                            <p class="text-gray-700">Your Auto Insurance policy ABC12345 is due for renewal on 12/31/2025. <a href="#" class="text-blue-600 hover:underline">Renew Now</a></p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">💬</span>
+                            <p class="text-gray-700">New message regarding your recent claim. <a href="#" class="text-blue-600 hover:underline">View Message</a></p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">✅</span>
+                            <p class="text-gray-700">Your profile is 80% complete. <a href="#" class="text-blue-600 hover:underline">Complete Your Profile</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </div>
     </main>
 
-    <footer class="bg-gray-800 text-white py-8 mt-auto rounded-t-lg">
-        <div class="container mx-auto px-4 text-center">
-            <div class="border-t border-gray-700 pt-6 text-gray-500 text-sm">
-                <p>&copy; 2025 InsureBuy. All rights reserved.</p>
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-10 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-bold mb-2">InsureBuy</h3>
+                <p class="text-sm text-gray-400">&copy; 2025 InsureBuy. All rights reserved.</p>
             </div>
+            <nav class="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Sitemap</a>
+            </nav>
         </div>
     </footer>
 
-    <script type="module" src="../js/login.js"></script>
+    <!-- Custom JavaScript -->
+    <script type="module" src="../js/dashboard.js"></script>
 </body>
 </html>
