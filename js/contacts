@@ -1,0 +1,46 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const getEl = (id) => document.getElementById(id);
+    const getEls = (selector) => document.querySelectorAll(selector);
+
+    // Get the header's login and register buttons
+    const headerLoginBtn = getEl('loginBtnHeader');
+    const headerRegisterBtn = getEl('registerBtnHeader');
+
+    // Helper to get the base URL
+    function getBaseUrl() {
+        const path = window.location.pathname;
+        const lastSlashIndex = path.lastIndexOf('/');
+        return window.location.origin + path.substring(0, lastSlashIndex + 1);
+    }
+    
+    // Dynamically update header buttons based on login status
+    const username = localStorage.getItem('registeredUsername');
+    if (username) {
+        // User is logged in, hide login and change register to "My Account"
+        if (headerLoginBtn) headerLoginBtn.style.display = 'none';
+        if (headerRegisterBtn) {
+            headerRegisterBtn.textContent = 'My Account';
+            headerRegisterBtn.href = getBaseUrl() + 'dashboard.html';
+        }
+    } else {
+        // User is not logged in, ensure both buttons are visible
+        if (headerLoginBtn) headerLoginBtn.style.display = 'inline-block';
+        if (headerRegisterBtn) {
+            headerRegisterBtn.textContent = 'Register';
+            headerRegisterBtn.href = getBaseUrl() + 'register.html';
+        }
+    }
+
+    // Add event listeners for navigation to handle page-specific behaviors
+    getEls('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href.startsWith('../')) {
+                // For links like "../index.html", we need to handle the path correctly
+                e.preventDefault();
+                window.location.href = href;
+            }
+        });
+    });
+
+});
