@@ -19,12 +19,38 @@
 
             <nav>
                 <ul class="flex space-x-6 items-center">
-                    <li><a href="index.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Home</a></li>
-                    <li><a href="html/plans.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Plans</a></li>
-                    <li><a href="html/aiassistance.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">AI Assistant</a></li>
-                    <li><a href="index.html#why-choose-us" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Why Choose Us?</a></li>
-                    <li><a href="index.html#about" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">About Us</a></li>
-                    <li><a href="html/dashboard/support.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Contact</a></li>
+                    <li><a href="index.html" class="text-lg font-medium text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 nav-link">Home</a></li>
+                    <li class="relative group">
+                        <button class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 flex items-center">
+                            Plans <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute z-10 hidden group-hover:block bg-white shadow-lg rounded-lg w-56 mt-2">
+                            <ul class="py-2">
+                                <li><a href="html/plans.html#life-insurance-details" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Life Insurance</a></li>
+                                <li><a href="html/plans.html#health-insurance-details" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Health Insurance</a></li>
+                                <li><a href="html/plans.html#auto-insurance-details" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Auto Insurance</a></li>
+                                <li><a href="html/plans.html#home-insurance-details" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home Insurance</a></li>
+                                <li><a href="html/plans.html#travel-insurance-details" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Travel Insurance</a></li>
+                                <li><a href="html/plans.html#student-insurance-details" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student Insurance</a></li>
+                                <li><a href="html/plans.html#business-insurance-details" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Business Insurance</a></li>
+                                <li><a href="html/plans.html#pet-insurance-details" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pet Insurance</a></li>
+                                <li><hr class="my-2 border-gray-200"></li>
+                                <li><a href="html/aiassistance.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">AI Assistant</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="relative group">
+                        <button class="text-lg font-medium text-gray-700 hover:text-blue-600 transition duration-300 p-2 rounded-lg hover:bg-gray-100 flex items-center">
+                            About Us <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute z-10 hidden group-hover:block bg-white shadow-lg rounded-lg w-56 mt-2">
+                            <ul class="py-2">
+                                <li><a href="html/contacts.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a></li>
+                                <li><a href="html/whychooseus.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Why Choose Us?</a></li>
+                                <li><a href="index.html#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li>
                         <a href="html/login.html" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Login</a>
                     </li>
@@ -47,7 +73,7 @@
                     Simplified Insurance Buying. Compare, choose, and buy the best insurance plans tailored for your life, health, home, and auto.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="html/dashboard/support.html" class="bg-yellow-400 text-blue-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105 text-xl">
+                    <a href="html/aiassistance.html" class="bg-yellow-400 text-blue-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105 text-xl">
                         Get Your Free Quote Now
                     </a>
                     <a href="html/plans.html" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white hover:text-blue-700 transition duration-300 transform hover:scale-105">
@@ -69,31 +95,7 @@
                 </div>
             </div>
         </section>
-
-        <section id="why-choose-us" class="py-16 bg-white rounded-lg shadow-md mx-4 mt-8">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">An Insurance Experience Designed for You</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-blue-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-blue-600 text-5xl mb-4">🔍</div> <h3 class="text-xl font-semibold text-gray-900 mb-3">Easy Comparison</h3>
-                        <p class="text-gray-700">Compare multiple plans side-by-side to find the best fit for your needs.</p>
-                    </div>
-                    <div class="bg-green-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-green-600 text-5xl mb-4">🌐</div> <h3 class="text-xl font-semibold text-gray-900 mb-3">Wide Range of Plans</h3>
-                        <p class="text-gray-700">From health to auto, life to home – we cover all your insurance needs.</p>
-                    </div>
-                    <div class="bg-purple-50 p-8 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-purple-600 text-5xl mb-4">🛡️</div> <h3 class="text-xl font-semibold text-gray-900 mb-3">Secure & Trustworthy</h3>
-                        <p class="text-gray-700">Your data is safe. We only partner with reputable insurance providers.</p>
-                    </div>
-                    <div class="bg-yellow-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-yellow-600 text-5xl mb-4">🎧</div> <h3 class="text-xl font-semibold text-gray-900 mb-3">Expert Support</h3>
-                        <p class="text-gray-700">Our dedicated team is here to guide you every step of the way.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        
         <section class="py-16 bg-blue-700 text-white mt-8 rounded-lg mx-4 shadow-md">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-12">Loved by Thousands of Users</h2>
@@ -200,7 +202,7 @@
                     <h4 class="text-lg font-semibold text-white mb-3">SUPPORT</h4>
                     <ul class="space-y-2">
                         <li><a href="html/dashboard/support.html" class="text-gray-300 hover:text-white transition duration-300">Contact Us</a></li>
-                        <li><a href="index.html#ai-assistant" class="text-gray-300 hover:text-white transition duration-300">AI Assistant</a></li>
+                        <li><a href="html/aiassistance.html" class="text-gray-300 hover:text-white transition duration-300">AI Assistant</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">FAQ</a></li>
                     </ul>
                 </div>
