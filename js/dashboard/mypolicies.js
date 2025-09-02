@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if user is logged in and update UI
     const username = localStorage.getItem('registeredUsername');
     if (!username) {
+        // Redirect to login page if not authenticated
         window.location.href = getBaseUrl() + '../../html/login.html';
     } else {
         if (loggedInUserNameSpan) {
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (logoutButton) {
         logoutButton.addEventListener('click', () => {
             localStorage.clear();
+            // Redirect to home page
             window.location.href = getBaseUrl() + '../../../index.html';
         });
     }
